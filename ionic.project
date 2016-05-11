@@ -1,4 +1,10 @@
 {
   "name": "app",
-  "app_id": ""
+  "app_id": "",
+  "proxies": [
+    {
+        "path" : "/api",
+        "proxyUrl": "http://185.81.167.243/api"
+    }
+  ]
 }
