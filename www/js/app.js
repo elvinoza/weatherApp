@@ -170,7 +170,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider, $httpPro
             localStorage.removeItem('user');
 
             // Send the user to the auth state so they can login
-            $state.go('auth');
+            $state.go('/login');
           }
         });
 
