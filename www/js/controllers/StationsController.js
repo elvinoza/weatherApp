@@ -1,9 +1,14 @@
-app.controller('StationsCtrl', function ($auth, $state, $scope, $rootScope, $stateParams, ApiService, ionicMaterialMotion) {
+app.controller('StationsCtrl', function ($auth, $state, $scope, $rootScope, $stateParams, ApiService, ionicMaterialInk) {
 
     var vm = this;
 
     vm.stations;
     vm.error;
+
+    var fab = document.getElementById('fab');
+    fab.addEventListener('click', function () {
+        $state.go('app.createStation');
+    });
 
     vm.getUserStations = function(){
         ApiService.getUserStations($rootScope.currentUser.id).success(function(data) {
@@ -13,17 +18,16 @@ app.controller('StationsCtrl', function ($auth, $state, $scope, $rootScope, $sta
         });
     };
 
-    vm.create = function(){
-        $state.go('createStation');
-    };
+    vm.getUserStations();
 
-    $scope.blinds = function() {
-        vm.getUserStations();
-        document.getElementsByTagName('ion-list')[0].className += ' animate-blinds';
-        setTimeout(function() {
-            ionicMaterialMotion.blinds(); // ionic.material.motion.blinds(); //ionicMaterialMotion
-        }, 500);
-    };
+    $scope.$on('ngLastRepeat.mylist',function(e) {
+        ionicMaterialInk.displayEffect();
+    });
 
-    $scope.blinds();
+    var fab = document.getElementById('fab');
+
+    fab.addEventListener('click', function () {
+        $state.go('app.createStation');
+    });
+
 });

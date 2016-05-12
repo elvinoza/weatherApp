@@ -1,0 +1,21 @@
+<ion-view view-title="Create Station">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="Name" ng-model="station.name">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Location</span>
+                <input type="text" placeholder="Location" ng-model="station.location">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Update Time</span>
+                <input type="number" placeholder="Update Time" ng-model="station.update_time">
+            </label>
+            <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="create()">
+                Create
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

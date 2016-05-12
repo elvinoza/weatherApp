@@ -1,11 +1,16 @@
 <ion-view view-title="User Stations">
+    <button id="fab" class="button button-positive button-fab button-fab-bottom-right" ng-click="create()">
+        <i class="icon ion-plus"></i>
+    </button>
     <ion-content>
-        <ion-list>
-            <ion-item nav-clear menu-close class="item-icon-right item-avatar" ng-repeat="(index, station) in stations">
-                <img src="img/material4.jpg">
+        <div class="list">
+            <a class="item item-avatar" ng-repeat="(index, station) in stations" ng-last-repeat="mylist">
+                <img src="img/material1.jpg">
                 <h2>{{ station.name }}</h2>
                 <p>{{ station.location }}</p>
-            </ion-item>
-        </ion-list>
+            </a>
+        </div>
+
+
     </ion-content>
 </ion-view>

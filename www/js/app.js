@@ -133,6 +133,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider, $httpPro
 
       })
 
+      .state('app.createStation', {
+        url: '/createStation',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/createStation.html',
+            controller: 'CreateStationCtrl'
+          }
+        }
+      })
+
       .state('app.userStations', {
         url: '/userStations',
         views: {
@@ -199,4 +209,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider, $httpPro
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
+})
+.directive('ngLastRepeat', function ($timeout) {
+  return {
+    restrict: 'A',
+    link: function (scope, element, attr) {
+      if (scope.$last === true) {
+        $timeout(function () {
+          scope.$emit('ngLastRepeat'+ (attr.ngLastRepeat ? '.'+attr.ngLastRepeat : ''));
+        });
+      }
+    }
+  }
 });

@@ -1,5 +1,7 @@
-app.controller('AuthCtrl', function ($auth, $state, $http, $rootScope) {
+app.controller('AuthCtrl', function ($auth, $state, $http, $rootScope, ionicMaterialInk) {
     var vm = this;
+
+    ionicMaterialInk.displayEffect();
 
     vm.login = function() {
 
