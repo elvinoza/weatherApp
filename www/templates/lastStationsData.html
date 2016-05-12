@@ -1,0 +1,14 @@
+<ion-view view-title="My last data from stations">
+    <ion-content>
+        <ion-list>
+            <div class="card" ng-repeat="data in datas">
+                <div class="item item-text-wrap">
+                    <h2>{{ data.name }}, {{ data.created_at }}</h2>
+                    Temperature: {{ data.temperature }} </br>
+                    Humidity: {{ data.humidity }} </br>
+                    ...
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -66,6 +66,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider, $httpPro
         controller: 'AppCtrl'
       })
 
+      .state('app.lastData', {
+        url: '/lastData',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/lastStationsData.html',
+            controller: 'LastStationsDataCtrl'
+          }
+        }
+      })
+
       .state('app.lists', {
         url: '/lists',
         views: {

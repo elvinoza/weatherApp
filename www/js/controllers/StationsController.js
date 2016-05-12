@@ -8,7 +8,6 @@ app.controller('StationsCtrl', function ($auth, $state, $scope, $rootScope, $sta
     vm.getUserStations = function(){
         ApiService.getUserStations($rootScope.currentUser.id).success(function(data) {
             $scope.stations = data;
-            console.log(vm.stations);
         }).error(function(error) {
             vm.error = error;
         });
