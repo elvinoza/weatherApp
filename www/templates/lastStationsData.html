@@ -1,7 +1,7 @@
-<ion-view view-title="My last data from stations">
+<ion-view view-title="The Latest Data From Stations">
     <ion-content>
         <ion-list>
-            <div class="card" ng-repeat="data in datas">
+            <div class="card" ng-repeat="(index, data) in datas" ng-click="openModal(index)">
                 <div class="item item-text-wrap">
                     <h2>{{ data.name }}, {{ data.created_at }}</h2>
                     Temperature: {{ data.temperature }} </br>
@@ -10,5 +10,40 @@
                 </div>
             </div>
         </ion-list>
+        <script id="my-modal.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">{{ modalData.name }}, {{ modalData.created_at }}</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                    <div class="list">
+                        <a class="item">
+                            Temperature: {{ modalData.temperature }}
+                        </a>
+                        <a class="item">
+                            Humidity: {{ modalData.humidity }}
+                        </a>
+                        <a class="item">
+                            Pressure: {{ modalData.pressure }}
+                        </a>
+                        <a class="item">
+                            Soil Temperature: {{ modalData.soil_temperature }}
+                        </a>
+                        <a class="item">
+                            Soil Humidity: {{ modalData.soil_humidity }}
+                        </a>
+                        <a class="item">
+                            Wind Speed: {{ modalData.wind_speed }}
+                        </a>
+                        <a class="item">
+                            Wind Directions: {{ modalData.wind_direction }}
+                        </a>
+                        <a class="item">
+                            Rain: {{ modalData.rain }} </br>
+                        </a>
+                    </div>
+                </ion-content>
+            </ion-modal-view>
+        </script>
     </ion-content>
 </ion-view>
