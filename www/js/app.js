@@ -163,6 +163,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider, $httpPro
         }
       })
 
+      .state('app.weathers', {
+        url: '/weathers',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/weathers.html',
+            controller: 'WeathersCtrl'
+          }
+        }
+      })
+
       .state('app.userDetails', {
         url: '/userDetails',
         views: {

@@ -1,0 +1,63 @@
+<ion-view view-title="Weathers">
+    <ion-content>
+        <label class = "item item-input item-select">
+            <div class = "input-label">
+                Select Station
+            </div>
+            <select ng-options="station.name for station in stations" ng-model="item" ng-change="update(item.id)">
+            </select>
+        </label>
+
+        <ion-refresher
+                pulling-text="Pull to refresh..."
+                on-refresh="refresh(item.id)">
+        </ion-refresher>
+
+        <ion-list>
+            <div class="card" ng-repeat="(index, weather) in weathers" ng-click="openModal(index)" ng-last-repeat="mylist">
+                <div class="item item-text-wrap">
+                    <h2>{{ weather.created_at }}</h2>
+                    Temperature: {{ weather.temperature }} </br>
+                    Humidity: {{ weather.humidity }} </br>
+                    ...
+                </div>
+            </div>
+        </ion-list>
+
+        <script id="weatherDetails.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">{{ modalData.created_at }}</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                    <div class="list">
+                        <a class="item">
+                            Temperature: {{ modalData.temperature }}
+                        </a>
+                        <a class="item">
+                            Humidity: {{ modalData.humidity }}
+                        </a>
+                        <a class="item">
+                            Pressure: {{ modalData.pressure }}
+                        </a>
+                        <a class="item">
+                            Soil Temperature: {{ modalData.soil_temperature }}
+                        </a>
+                        <a class="item">
+                            Soil Humidity: {{ modalData.soil_humidity }}
+                        </a>
+                        <a class="item">
+                            Wind Speed: {{ modalData.wind_speed }}
+                        </a>
+                        <a class="item">
+                            Wind Directions: {{ modalData.wind_direction }}
+                        </a>
+                        <a class="item">
+                            Rain: {{ modalData.rain }} </br>
+                        </a>
+                    </div>
+                </ion-content>
+            </ion-modal-view>
+        </script>
+    </ion-content>
+</ion-view>

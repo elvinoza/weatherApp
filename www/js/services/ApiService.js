@@ -38,9 +38,13 @@
             return $http.get(baseURL + 'station/weathers/' + id);
         };
 
+        this.getWeather = function(id) {
+            return  $http.get(baseURL + 'weather/' + id);
+        };
+
         this.getUserLastStationsData = function(id)
         {
             return $http.get(baseURL + 'user/StationsLastData/' + id);
-        }
+        };
     }
 })();
