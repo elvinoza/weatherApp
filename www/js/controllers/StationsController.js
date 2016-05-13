@@ -10,7 +10,7 @@ app.controller('StationsCtrl', function ($auth, $state, $scope, $rootScope, $sta
         $state.go('app.createStation');
     });
 
-    vm.getUserStations = function(){
+    $scope.getUserStations = function(){
         ApiService.getUserStations($rootScope.currentUser.id).success(function(data) {
             $scope.stations = data;
         }).error(function(error) {
@@ -18,7 +18,7 @@ app.controller('StationsCtrl', function ($auth, $state, $scope, $rootScope, $sta
         });
     };
 
-    vm.getUserStations();
+    $scope.getUserStations();
 
     $scope.$on('ngLastRepeat.mylist',function(e) {
         ionicMaterialInk.displayEffect();
@@ -30,8 +30,16 @@ app.controller('StationsCtrl', function ($auth, $state, $scope, $rootScope, $sta
         $state.go('app.createStation');
     });
 
+    $scope.refresh = function() {
+        ApiService.getUserStations($rootScope.currentUser.id).success(function (data) {
+                $scope.stations = data;
+            })
+            .finally(function () {
+                $scope.$broadcast('scroll.refreshComplete');
+            });
+    };
+
     $scope.update = function(stationId){
         $state.go('app.editStation', { id: stationId});
     };
-
 });
