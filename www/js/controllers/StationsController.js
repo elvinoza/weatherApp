@@ -30,4 +30,8 @@ app.controller('StationsCtrl', function ($auth, $state, $scope, $rootScope, $sta
         $state.go('app.createStation');
     });
 
+    $scope.update = function(stationId){
+        $state.go('app.editStation', { id: stationId});
+    };
+
 });

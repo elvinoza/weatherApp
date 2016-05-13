@@ -143,6 +143,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider, $httpPro
         }
       })
 
+      .state('app.editStation', {
+        url: '/editStation/:id',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/editStation.html',
+            controller: 'EditStationCtrl'
+          }
+        }
+      })
+
       .state('app.userStations', {
         url: '/userStations',
         views: {
