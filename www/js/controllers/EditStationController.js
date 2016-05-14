@@ -9,6 +9,7 @@ app.controller('EditStationCtrl', function ($state, $scope, $stateParams, $rootS
     $scope.getStation = function(id){
         ApiService.getStation(id).success(function(data) {
             $scope.station = data;
+            console.log(data);
         }).error(function(error) {
             $scope.message = true;
             $scope.messages = error;
