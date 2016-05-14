@@ -1,35 +1,35 @@
-app.controller('AuthCtrl', function ($auth, $state, $http, $rootScope, ionicMaterialInk) {
-    var vm = this;
+app.controller('AuthCtrl', function ($auth, $state, $scope, $http, $rootScope, ionicMaterialInk) {
+
+    $scope.credentials = {};
+    $scope.message = false;
+    $scope.messages;
 
     ionicMaterialInk.displayEffect();
 
-    vm.login = function() {
+    $scope.login = function() {
 
-        var credentials = {
-            email: vm.email,
-            password: vm.password
-        }
-
-        $auth.login(credentials).then(function() {
+        $auth.login($scope.credentials).then(function() {
             return $http.get('http://185.81.167.243/api/' + 'authenticate/user');
 
         }, function(error) {
-            console.log(error);
+            $scope.message = true;
+            $scope.messages = error.data.error;
 
         }).then(function(response) {
 
-            var user = JSON.stringify(response.data.user);
+            if(!angular.isUndefined(response)) {
+                var user = JSON.stringify(response.data.user);
 
-            localStorage.setItem('user', user);
+                localStorage.setItem('user', user);
 
-            $rootScope.authenticated = true;
+                $rootScope.authenticated = true;
 
-            $rootScope.currentUser = response.data.user;
+                $rootScope.currentUser = response.data.user;
 
-            $state.go('app.lastData');
+                $state.go('app.lastData');
+            }
         });
     }
-
 });
 
 
