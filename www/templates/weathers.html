@@ -1,12 +1,12 @@
 <ion-view view-title="Weathers">
     <ion-content>
-        <label class = "item item-input item-select">
-            <div class = "input-label">
+        <div class="item item-input item-select">
+            <div class="input-label">
                 Select Station
             </div>
             <select ng-options="station.name for station in stations" ng-model="item" ng-change="update(item.id)">
             </select>
-        </label>
+        </div>
 
         <ion-refresher
                 pulling-text="Pull to refresh..."
