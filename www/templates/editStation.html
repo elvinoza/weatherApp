@@ -3,22 +3,28 @@
         <div class="bar bar-subheader bar-stable static text-center" ng-if="message" style="background-color: #2196F3;">
             <strong class="title" style="color: white">{{ messages }}</strong>
         </div>
-        <div class="list">
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Name</span>
-                <input type="text" placeholder="Name" ng-model="station.name">
-            </label>
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Location</span>
-                <input type="text" placeholder="Location" ng-model="station.location">
-            </label>
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Update Time</span>
-                <input type="number" placeholder="Update Time" ng-model="station.update_time">
-            </label>
-            <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="update()">
-                Update
-            </button>
+        <div class="im-wrapper">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Name</span>
+                    <input type="text" placeholder="Name" ng-model="station.name">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Location</span>
+                    <input type="text" placeholder="Location" ng-model="station.location">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Update Time</span>
+                    <input type="number" placeholder="Update Time" ng-model="station.update_time">
+                </label>
+                <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="update()">
+                    Update
+                </button>
+
+                <button class="button button-block button-assertive icon ion-trash-a ink-dark">
+                    Delete
+                </button>
+            </div>
         </div>
     </ion-content>
 </ion-view>

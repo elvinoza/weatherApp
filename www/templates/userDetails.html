@@ -1,17 +1,19 @@
 <ion-view view-title="User Details">
     <ion-content>
-        <div class="list">
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Name</span>
-                <input type="text" placeholder="Name" ng-model="user.name">
-            </label>
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Email</span>
-                <input type="email" placeholder="Email" ng-model="user.email">
-            </label>
-            <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="user.update()">
-                Update
-            </button>
+        <div class="im-wrapper">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Name</span>
+                    <input type="text" placeholder="Name" ng-model="user.name">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email" ng-model="user.email">
+                </label>
+                <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="user.update()">
+                    Update
+                </button>
+            </div>
         </div>
     </ion-content>
 </ion-view>

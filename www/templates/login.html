@@ -3,18 +3,20 @@
         <div class="bar bar-header bar-assertive" style="position: static;">
             <div class="h1 title">Login</div>
         </div>
-        <div class="list">
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Email</span>
-                <input type="text" placeholder="Email" ng-model="auth.email">
-            </label>
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Password</span>
-                <input type="password" placeholder="Password" ng-model="auth.password">
-            </label>
-            <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="auth.login()">
-                Sign in
-            </button>
+        <div class="im-wrapper">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input type="text" placeholder="Email" ng-model="auth.email">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" ng-model="auth.password">
+                </label>
+                <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="auth.login()">
+                    Sign in
+                </button>
+            </div>
         </div>
     </ion-content>
 </ion-view>
