@@ -18,6 +18,10 @@
             return $http.post(baseURL + 'user/' + user.id, user, { headers: { 'Accept': 'Application/json' }});
         };
 
+        this.changePassword = function(password){
+            return $http.post(baseURL + 'password', password, {headers: { 'Accept': 'Application/json' }})
+        };
+
         this.getUserStations = function(id){
             return $http.get(baseURL + 'user/stations/' + id);
         };
