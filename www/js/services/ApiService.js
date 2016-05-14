@@ -39,7 +39,11 @@
         };
 
         this.getWeather = function(id) {
-            return  $http.get(baseURL + 'weather/' + id);
+            return $http.get(baseURL + 'weather/' + id);
+        };
+
+        this.deleteStation = function(id) {
+            return $http.get(baseURL + 'station/delete/' + id);
         };
 
         this.getUserLastStationsData = function(id)

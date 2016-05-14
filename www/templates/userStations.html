@@ -3,11 +3,11 @@
         <i class="icon ion-plus"></i>
     </button>
     <ion-content>
+        <ion-refresher
+                pulling-text="Pull to refresh..."
+                on-refresh="refresh()">
+        </ion-refresher>
         <div class="im-wrapper">
-            <ion-refresher
-                    pulling-text="Pull to refresh..."
-                    on-refresh="refresh()">
-            </ion-refresher>
             <div class="list">
                 <a class="item item-avatar" ng-repeat="(index, station) in stations" ng-last-repeat="mylist" ng-click="update(station.id)">
                     <img src="img/material1.jpg">

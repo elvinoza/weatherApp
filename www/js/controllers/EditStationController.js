@@ -1,4 +1,4 @@
-app.controller('EditStationCtrl', function ($state, $scope, $stateParams, $rootScope, ApiService, ionicMaterialInk, $timeout) {
+app.controller('EditStationCtrl', function ($state, $scope, $stateParams, $rootScope, $ionicHistory, ApiService, ionicMaterialInk, $timeout) {
     ionicMaterialInk.displayEffect();
 
     $scope.message = false;
@@ -32,6 +32,15 @@ app.controller('EditStationCtrl', function ($state, $scope, $stateParams, $rootS
             $scope.messages = error;
         });
     };
+
+    $scope.delete = function(stationId){
+        ApiService.deleteStation(stationId).success(function (data) {
+            $ionicHistory.goBack();
+        }).error(function(error) {
+            $scope.message = true;
+            $scope.messages = error;
+        });
+    }
 
     $scope.getStation($stateParams.id);
 });

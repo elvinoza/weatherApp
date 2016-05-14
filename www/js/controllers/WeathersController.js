@@ -14,7 +14,6 @@ app.controller('WeathersCtrl', function ($auth, $state, $scope, $rootScope, $sta
 
     $scope.getStationWeathers = function(id){
         ApiService.getStationWeathers(id).success(function(data) {
-            console.log(data);
             $scope.weathers = data;
         }).error(function(error) {
 
@@ -42,7 +41,6 @@ app.controller('WeathersCtrl', function ($auth, $state, $scope, $rootScope, $sta
     });
 
     $scope.openModal = function(index) {
-        console.log(index);
         $scope.modalData = $scope.weathers[index];
         $scope.modal.show();
         $timeout(function () {
