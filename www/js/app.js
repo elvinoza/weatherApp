@@ -86,42 +86,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider, $httpPro
         }
       })
 
-      .state('app.ink', {
-        url: '/ink',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/ink.html',
-            controller: 'InkCtrl'
-          }
-        }
-      })
-
-      .state('app.motion', {
-        url: '/motion',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/motion.html',
-            controller: 'MotionCtrl'
-          }
-        }
-      })
-
       .state('app.components', {
         url: '/components',
         views: {
           'menuContent': {
             templateUrl: 'templates/components.html',
             controller: 'ComponentsCtrl'
-          }
-        }
-      })
-
-      .state('app.extensions', {
-        url: '/extensions',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/extensions.html',
-            controller: 'ExtensionsCtrl'
           }
         }
       })
