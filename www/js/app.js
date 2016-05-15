@@ -48,7 +48,7 @@ app.run(function ($ionicPlatform, $rootScope, $state) {
         event.preventDefault();
 
         // go to the "main" state which in our case is users
-        $state.go('app.components');
+        $state.go('app.lastData');
       }
     }
   });
