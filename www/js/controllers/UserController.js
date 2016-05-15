@@ -24,7 +24,11 @@ app.controller('UserCtrl', function ($auth, $state, $scope, $rootScope, $statePa
             }, 4000);
         }).error(function(error) {
             $scope.message = true;
-            $scope.messages = error;
+            if (typeof(error.name) !== 'undefined'){
+                $scope.messages= error.name[0];
+            } else {
+                $scope.messages= error.email[0];
+            }
         });
     };
 
@@ -39,7 +43,11 @@ app.controller('UserCtrl', function ($auth, $state, $scope, $rootScope, $statePa
             }, 4000);
         }).error(function(error) {
             $scope.message = true;
-            $scope.messages = error;
+            if (typeof(error.current_password) !== 'undefined'){
+                $scope.messages= error.current_password[0];
+            } else {
+                $scope.messages= error.new_password[0];
+            }
         });
     };
 
