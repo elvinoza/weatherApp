@@ -1,5 +1,10 @@
 <ion-view view-title="Create Station">
     <ion-content>
+        <div class="bar bar-subheader bar-stable static text-center" ng-if="message" style="background-color: #2196F3;">
+            <strong class="title" style="color: white">
+                {{ messages }}
+            </strong>
+        </div>
         <div class="list">
             <label class="item item-input item-floating-label">
                 <span class="input-label">Name</span>

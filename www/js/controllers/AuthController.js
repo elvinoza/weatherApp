@@ -29,7 +29,7 @@ app.controller('AuthCtrl', function ($auth, $state, $scope, $http, $rootScope, i
                 $state.go('app.lastData');
             }
         });
-    }
+    };
 });
 
 
