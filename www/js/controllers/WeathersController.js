@@ -1,4 +1,4 @@
-app.controller('WeathersCtrl', function ($auth, $state, $scope, $rootScope, $stateParams, ApiService, ionicMaterialInk, $ionicModal, $timeout) {
+app.controller('WeathersCtrl', function ($auth, $state, $scope, $rootScope, $stateParams, ApiService, ionicMaterialInk, $ionicModal, $timeout, $ionicLoading) {
 
     ionicMaterialInk.displayEffect();
 
@@ -13,10 +13,12 @@ app.controller('WeathersCtrl', function ($auth, $state, $scope, $rootScope, $sta
     };
 
     $scope.getStationWeathers = function(id){
+        $scope.loading();
         ApiService.getStationWeathers(id).success(function(data) {
+            $ionicLoading.hide();
             $scope.weathers = data;
         }).error(function(error) {
-
+            $ionicLoading.hide();
         });
     };
 
@@ -46,6 +48,12 @@ app.controller('WeathersCtrl', function ($auth, $state, $scope, $rootScope, $sta
         $timeout(function () {
             $scope.modal.hide();
         }, 4000);
+    };
+
+    $scope.loading = function() {
+        $ionicLoading.show({
+            template: '<div class="loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
+        });
     };
 
     $scope.getUserStations();

@@ -9,6 +9,8 @@ app.controller('LastStationsDataCtrl', function ($auth, $state, $scope, $rootSco
             $scope.datas = data;
         }).error(function(error) {
             vm.error = error;
+        }).finally(function () {
+            $scope.$broadcast('scroll.refreshComplete');
         });
     };
 
@@ -26,6 +28,10 @@ app.controller('LastStationsDataCtrl', function ($auth, $state, $scope, $rootSco
     }).then(function(modal) {
         $scope.modal = modal;
     });
+
+    $scope.refresh = function() {
+        $scope.blinds();
+    };
 
     $scope.openModal = function(index) {
         $scope.modalData = $scope.datas[index];
