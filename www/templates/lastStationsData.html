@@ -8,8 +8,8 @@
             <div class="card" ng-repeat="(index, data) in datas" ng-click="openModal(index)">
                 <div class="item item-text-wrap">
                     <h2>{{ data.name }}, {{ data.created_at }}</h2>
-                    Temperature: {{ data.temperature }} </br>
-                    Humidity: {{ data.humidity }} </br>
+                    Temperature: {{ data.temperature }} &#8451; </br>
+                    Humidity: {{ data.humidity }} &#8451; </br>
                     ...
                 </div>
             </div>
@@ -22,28 +22,25 @@
                 <ion-content class="padding">
                     <div class="list">
                         <a class="item">
-                            Temperature: {{ modalData.temperature }}
+                            Temperature: {{ modalData.temperature }} &#8451;
                         </a>
                         <a class="item">
-                            Humidity: {{ modalData.humidity }}
+                            Humidity: {{ modalData.humidity }} %
                         </a>
                         <a class="item">
-                            Pressure: {{ modalData.pressure }}
+                            Pressure: {{ modalData.pressure }} Pa
                         </a>
                         <a class="item">
-                            Soil Temperature: {{ modalData.soil_temperature }}
+                            Soil Temperature: {{ modalData.soil_temperature }} &#8451;
                         </a>
                         <a class="item">
-                            Soil Humidity: {{ modalData.soil_humidity }}
+                            Soil Humidity: {{ modalData.soil_humidity }} %
                         </a>
                         <a class="item">
-                            Wind Speed: {{ modalData.wind_speed }}
+                            Wind Speed: {{ modalData.wind_speed }} Km/h
                         </a>
                         <a class="item">
-                            Wind Directions: {{ modalData.wind_direction }}
-                        </a>
-                        <a class="item">
-                            Rain: {{ modalData.rain }} </br>
+                            Rain: {{ modalData.rain }} mm</br>
                         </a>
                     </div>
                 </ion-content>

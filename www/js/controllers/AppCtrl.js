@@ -18,10 +18,10 @@
     // .fromTemplate() method
     var template = '<ion-popover-view>' +
                     '   <ion-header-bar>' +
-                    '       <h1 class="title">My Popover Title</h1>' +
+                    '       <h1 class="title">Settings</h1>' +
                     '   </ion-header-bar>' +
                     '   <ion-content class="padding">' +
-                    '       My Popover Contents' +
+                    '       Settings...' +
                     '   </ion-content>' +
                     '</ion-popover-view>';
 

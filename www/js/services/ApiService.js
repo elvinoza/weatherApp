@@ -39,7 +39,7 @@
         };
 
         this.getStationWeathers = function(id){
-            return $http.get(baseURL + 'station/weathers/' + id);
+            return $http.get(baseURL + 'station/weathers/' + id + '/50');
         };
 
         this.getWeather = function(id) {
